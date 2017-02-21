@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>datastax</groupId>
-    <artifactId>spark-cassandra-connector</artifactId>
+    <groupId>com.datastax.spark</groupId>
+    <artifactId>spark-cassandra-connector_2.11</artifactId>
     <packaging>jar</packaging>
     <description>String</description>
     <url>https://github.com/datastax/spark-cassandra-connector</url>
-    <version>2.0.0-RC1-1-g6929888-s_2.11</version>
+    <version>2.0.0-RC1-1-g6929888</version>
     <licenses>
         <license>
             <name>Apache License 2.0</name>
