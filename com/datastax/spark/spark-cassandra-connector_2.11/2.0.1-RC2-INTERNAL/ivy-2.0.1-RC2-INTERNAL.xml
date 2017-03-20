@@ -1,0 +1,545 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ivy-module version="2.0" xmlns:e="http://ant.apache.org/ivy/extra">
+  <info organisation="com.datastax.spark" module="spark-cassandra-connector_2.11" revision="2.0.1-RC2-INTERNAL" status="release" publication="20170320143534">
+    <description/>
+</info>
+  <configurations>
+    
+    <conf name="pom" visibility="public" description=""/>
+    <conf extends="runtime" name="test" visibility="public" description=""/>
+    <conf name="provided" visibility="public" description=""/>
+    
+    <conf name="docs" visibility="public" description=""/>
+    <conf extends="runtime" name="it" visibility="public" description=""/>
+    <conf name="optional" visibility="public" description=""/>
+    <conf name="compile" visibility="public" description=""/>
+    
+    
+    <conf name="sources" visibility="public" description=""/>
+    
+    <conf extends="compile" name="runtime" visibility="public" description=""/>
+    
+  </configurations>
+  <publications>
+    <artifact e:classifier="tests" name="spark-cassandra-connector_2.11" type="jar" ext="jar" conf="test">
+</artifact>
+    <artifact name="spark-cassandra-connector_2.11" type="jar" ext="jar" conf="compile,compile,runtime,test,provided,optional,it,sources,docs,pom,compile,runtime,test,provided,optional,it,sources,docs,pom">
+</artifact>
+    <artifact e:classifier="javadoc" name="spark-cassandra-connector_2.11" type="doc" ext="jar" conf="compile">
+</artifact>
+    <artifact e:classifier="sources" name="spark-cassandra-connector_2.11" type="src" ext="jar" conf="compile">
+</artifact>
+  </publications>
+  <dependencies>
+    
+    
+    
+    
+    <dependency org="com.datastax.spark" name="spark-cassandra-connector-embedded_2.11" rev="2.0.1-RC2-INTERNAL" conf="test->test">
+</dependency>
+    <dependency org="com.datastax.spark" name="spark-cassandra-connector-embedded_2.11" rev="2.0.1-RC2-INTERNAL" conf="it->it">
+</dependency>
+    <dependency org="com.datastax.spark" name="spark-cassandra-connector-embedded_2.11" rev="2.0.1-RC2-INTERNAL" conf="it->test">
+</dependency>
+    <dependency org="org.scoverage" name="scalac-scoverage-runtime_2.11" rev="1.0.4" conf="provided->default(compile)">
+</dependency>
+    <dependency org="org.scoverage" name="scalac-scoverage-plugin_2.11" rev="1.0.4" conf="provided->default(compile)">
+</dependency>
+    <dependency org="org.scala-lang" name="scala-library" rev="2.11.8" conf="compile->default(compile)">
+</dependency>
+    <dependency org="org.apache.spark" name="spark-core_2.11" rev="2.1.0" conf="provided->default(compile)">
+</dependency>
+    <dependency org="org.apache.spark" name="spark-streaming_2.11" rev="2.1.0" conf="provided->default(compile)">
+      <exclude org="io.netty" module="netty-transport" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="org.apache.curator" module="curator-recipes" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="org.apache.spark" module="spark-core_2.11" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="org.glassfish.jersey.containers" module="jersey-container-servlet-core" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="org.slf4j" module="log4j-over-slf4j" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="org.glassfish.jersey.core" module="jersey-server" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="io.netty" module="netty-codec" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="io.netty" module="netty" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="io.netty" module="netty-common" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="org.glassfish.jersey.core" module="jersey-client" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="io.netty" module="netty-handler" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="org.glassfish.jersey.containers" module="jersey-container-servlet" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="commons-beanutils" module="commons-beanutils-core" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="com.google.guava" module="guava" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="org.glassfish.jersey.core" module="jersey-common" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="commons-collections" module="commons-collections" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="io.netty" module="netty-buffer" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="commons-logging" module="commons-logging" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+</dependency>
+    <dependency org="org.scalacheck" name="scalacheck_2.11" rev="1.12.5" conf="test->default(compile)">
+      <exclude org="org.slf4j" module="log4j-over-slf4j" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+</dependency>
+    <dependency org="org.scalacheck" name="scalacheck_2.11" rev="1.12.5" conf="it->default(compile)">
+      <exclude org="org.slf4j" module="log4j-over-slf4j" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+</dependency>
+    <dependency org="org.apache.spark" name="spark-core_2.11" rev="2.1.0" conf="test->default(compile)">
+      <exclude org="org.slf4j" module="log4j-over-slf4j" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+</dependency>
+    <dependency org="org.apache.spark" name="spark-core_2.11" rev="2.1.0" conf="it->default(compile)">
+      <exclude org="org.slf4j" module="log4j-over-slf4j" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+</dependency>
+    <dependency org="org.apache.spark" name="spark-core_2.11" rev="2.1.0" conf="provided->default(compile)">
+      <exclude org="io.netty" module="netty-transport" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="org.apache.curator" module="curator-recipes" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="org.glassfish.jersey.containers" module="jersey-container-servlet-core" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="org.slf4j" module="log4j-over-slf4j" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="org.glassfish.jersey.core" module="jersey-server" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="io.netty" module="netty-codec" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="io.netty" module="netty" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="io.netty" module="netty-common" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="org.glassfish.jersey.core" module="jersey-client" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="io.netty" module="netty-handler" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="org.glassfish.jersey.containers" module="jersey-container-servlet" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="commons-beanutils" module="commons-beanutils-core" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="com.google.guava" module="guava" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="org.glassfish.jersey.core" module="jersey-common" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="commons-collections" module="commons-collections" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="io.netty" module="netty-buffer" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="commons-logging" module="commons-logging" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+</dependency>
+    <dependency org="org.apache.spark" name="spark-catalyst_2.11" rev="2.1.0" conf="provided->default(compile)">
+      <exclude org="io.netty" module="netty-transport" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="org.apache.curator" module="curator-recipes" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="org.apache.spark" module="spark-core_2.11" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="org.glassfish.jersey.containers" module="jersey-container-servlet-core" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="org.slf4j" module="log4j-over-slf4j" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="org.glassfish.jersey.core" module="jersey-server" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="io.netty" module="netty-codec" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="io.netty" module="netty" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="io.netty" module="netty-common" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="org.glassfish.jersey.core" module="jersey-client" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="io.netty" module="netty-handler" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="org.glassfish.jersey.containers" module="jersey-container-servlet" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="commons-beanutils" module="commons-beanutils-core" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="com.google.guava" module="guava" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="org.glassfish.jersey.core" module="jersey-common" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="commons-collections" module="commons-collections" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="io.netty" module="netty-buffer" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="commons-logging" module="commons-logging" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+</dependency>
+    <dependency org="org.powermock" name="powermock-api-mockito" rev="1.6.2" conf="test->default(compile)">
+      <exclude org="org.slf4j" module="log4j-over-slf4j" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+</dependency>
+    <dependency org="org.powermock" name="powermock-api-mockito" rev="1.6.2" conf="it->default(compile)">
+      <exclude org="org.slf4j" module="log4j-over-slf4j" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+</dependency>
+    <dependency org="com.twitter" name="jsr166e" rev="1.1.0" conf="compile->default(compile)">
+      <exclude org="org.slf4j" module="log4j-over-slf4j" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+</dependency>
+    <dependency org="commons-beanutils" name="commons-beanutils" rev="1.9.3" conf="compile->default(compile)">
+      <exclude org="commons-logging" module="commons-logging" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="org.slf4j" module="log4j-over-slf4j" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+</dependency>
+    <dependency org="org.powermock" name="powermock-module-junit4" rev="1.6.2" conf="test->default(compile)">
+      <exclude org="org.slf4j" module="log4j-over-slf4j" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+</dependency>
+    <dependency org="org.powermock" name="powermock-module-junit4" rev="1.6.2" conf="it->default(compile)">
+      <exclude org="org.slf4j" module="log4j-over-slf4j" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+</dependency>
+    <dependency org="org.apache.spark" name="spark-sql_2.11" rev="2.1.0" conf="provided->default(compile)">
+      <exclude org="io.netty" module="netty-transport" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="org.apache.curator" module="curator-recipes" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="org.apache.spark" module="spark-core_2.11" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="org.glassfish.jersey.containers" module="jersey-container-servlet-core" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="org.slf4j" module="log4j-over-slf4j" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="org.glassfish.jersey.core" module="jersey-server" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="io.netty" module="netty-codec" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="io.netty" module="netty" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="io.netty" module="netty-common" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="org.glassfish.jersey.core" module="jersey-client" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="io.netty" module="netty-handler" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="org.glassfish.jersey.containers" module="jersey-container-servlet" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="commons-beanutils" module="commons-beanutils-core" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="com.google.guava" module="guava" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="org.glassfish.jersey.core" module="jersey-common" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="commons-collections" module="commons-collections" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="io.netty" module="netty-buffer" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="commons-logging" module="commons-logging" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+</dependency>
+    <dependency org="com.codahale.metrics" name="metrics-json" rev="3.0.2" conf="provided->default(compile)">
+      <exclude org="org.slf4j" module="log4j-over-slf4j" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+</dependency>
+    <dependency org="commons-io" name="commons-io" rev="2.4" conf="test->default(compile)">
+      <exclude org="org.slf4j" module="log4j-over-slf4j" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+</dependency>
+    <dependency org="commons-io" name="commons-io" rev="2.4" conf="it->default(compile)">
+      <exclude org="org.slf4j" module="log4j-over-slf4j" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+</dependency>
+    <dependency org="joda-time" name="joda-time" rev="2.3" conf="compile->default(compile)">
+      <exclude org="org.slf4j" module="log4j-over-slf4j" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+</dependency>
+    <dependency org="org.slf4j" name="slf4j-api" rev="1.6.1" conf="provided->default(compile)">
+      <exclude org="org.slf4j" module="log4j-over-slf4j" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+</dependency>
+    <dependency org="org.scalamock" name="scalamock-scalatest-support_2.11" rev="3.2" conf="test->default(compile)">
+      <exclude org="org.slf4j" module="log4j-over-slf4j" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+</dependency>
+    <dependency org="org.scalamock" name="scalamock-scalatest-support_2.11" rev="3.2" conf="it->default(compile)">
+      <exclude org="org.slf4j" module="log4j-over-slf4j" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+</dependency>
+    <dependency org="junit" name="junit" rev="4.11" conf="test->default(compile)">
+      <exclude org="org.slf4j" module="log4j-over-slf4j" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+</dependency>
+    <dependency org="junit" name="junit" rev="4.11" conf="it->default(compile)">
+      <exclude org="org.slf4j" module="log4j-over-slf4j" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+    </dependency>
+    <dependency org="com.codahale.metrics" name="metrics-core" rev="3.0.2" conf="provided->default(compile)">
+      <exclude org="org.slf4j" module="log4j-over-slf4j" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+</dependency>
+    <dependency org="io.netty" name="netty-all" rev="3.6.2.Final" conf="compile->default(compile)">
+      <exclude org="org.slf4j" module="log4j-over-slf4j" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+</dependency>
+    <dependency org="com.ning" name="compress-lzf" rev="0.8.4" conf="provided->default(compile)">
+      <exclude org="org.slf4j" module="log4j-over-slf4j" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+</dependency>
+    <dependency org="org.apache.spark" name="spark-streaming_2.11" rev="2.1.0" conf="test->default(compile)">
+      <exclude org="org.slf4j" module="log4j-over-slf4j" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+</dependency>
+    <dependency org="org.apache.spark" name="spark-streaming_2.11" rev="2.1.0" conf="it->default(compile)">
+      <exclude org="org.slf4j" module="log4j-over-slf4j" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+</dependency>
+    <dependency org="org.apache.spark" name="spark-repl_2.11" rev="2.1.0" conf="test->default(compile)">
+      <exclude org="io.netty" module="netty-transport" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="org.apache.curator" module="curator-recipes" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="org.apache.spark" module="spark-core_2.11" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="org.glassfish.jersey.containers" module="jersey-container-servlet-core" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="org.slf4j" module="log4j-over-slf4j" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="org.glassfish.jersey.core" module="jersey-server" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="io.netty" module="netty-codec" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="io.netty" module="netty" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="io.netty" module="netty-common" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="org.glassfish.jersey.core" module="jersey-client" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="io.netty" module="netty-handler" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="org.glassfish.jersey.containers" module="jersey-container-servlet" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="commons-beanutils" module="commons-beanutils-core" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="com.google.guava" module="guava" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="org.glassfish.jersey.core" module="jersey-common" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="commons-collections" module="commons-collections" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="io.netty" module="netty-buffer" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="commons-logging" module="commons-logging" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+</dependency>
+    <dependency org="org.apache.spark" name="spark-repl_2.11" rev="2.1.0" conf="it->default(compile)">
+      <exclude org="io.netty" module="netty-transport" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="org.apache.curator" module="curator-recipes" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="org.apache.spark" module="spark-core_2.11" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="org.glassfish.jersey.containers" module="jersey-container-servlet-core" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="org.slf4j" module="log4j-over-slf4j" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="org.glassfish.jersey.core" module="jersey-server" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="io.netty" module="netty-codec" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="io.netty" module="netty" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="io.netty" module="netty-common" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="org.glassfish.jersey.core" module="jersey-client" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="io.netty" module="netty-handler" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="org.glassfish.jersey.containers" module="jersey-container-servlet" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="commons-beanutils" module="commons-beanutils-core" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="com.google.guava" module="guava" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="org.glassfish.jersey.core" module="jersey-common" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="commons-collections" module="commons-collections" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="io.netty" module="netty-buffer" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="commons-logging" module="commons-logging" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+</dependency>
+    <dependency org="org.apache.spark" name="spark-unsafe_2.11" rev="2.1.0" conf="provided->default(compile)">
+      <exclude org="io.netty" module="netty-transport" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="org.apache.curator" module="curator-recipes" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="org.apache.spark" module="spark-core_2.11" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="org.glassfish.jersey.containers" module="jersey-container-servlet-core" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="org.slf4j" module="log4j-over-slf4j" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="org.glassfish.jersey.core" module="jersey-server" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="io.netty" module="netty-codec" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="io.netty" module="netty" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="io.netty" module="netty-common" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="org.glassfish.jersey.core" module="jersey-client" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="io.netty" module="netty-handler" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="org.glassfish.jersey.containers" module="jersey-container-servlet" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="commons-beanutils" module="commons-beanutils-core" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="com.google.guava" module="guava" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="org.glassfish.jersey.core" module="jersey-common" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="commons-collections" module="commons-collections" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="io.netty" module="netty-buffer" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="commons-logging" module="commons-logging" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+</dependency>
+    <dependency org="org.eclipse.jetty" name="jetty-server" rev="8.1.14.v20131031" conf="provided->default(compile)">
+      <exclude org="org.slf4j" module="log4j-over-slf4j" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+</dependency>
+    <dependency org="com.novocode" name="junit-interface" rev="0.10" conf="test->default(compile)">
+      <exclude org="org.slf4j" module="log4j-over-slf4j" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+</dependency>
+    <dependency org="com.novocode" name="junit-interface" rev="0.10" conf="it->default(compile)">
+      <exclude org="org.slf4j" module="log4j-over-slf4j" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+</dependency>
+    <dependency org="org.eclipse.jetty" name="jetty-servlet" rev="8.1.14.v20131031" conf="provided->default(compile)">
+      <exclude org="org.slf4j" module="log4j-over-slf4j" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+</dependency>
+    <dependency org="org.joda" name="joda-convert" rev="1.2" conf="compile->default(compile)">
+      <exclude org="org.slf4j" module="log4j-over-slf4j" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+</dependency>
+    <dependency org="org.apache.spark" name="spark-hive_2.11" rev="2.1.0" conf="provided->default(compile)">
+      <exclude org="io.netty" module="netty-transport" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="org.apache.curator" module="curator-recipes" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="org.apache.spark" module="spark-core_2.11" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="org.glassfish.jersey.containers" module="jersey-container-servlet-core" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="org.slf4j" module="log4j-over-slf4j" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="org.glassfish.jersey.core" module="jersey-server" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="io.netty" module="netty-codec" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="io.netty" module="netty" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="io.netty" module="netty-common" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="org.glassfish.jersey.core" module="jersey-client" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="io.netty" module="netty-handler" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="org.glassfish.jersey.containers" module="jersey-container-servlet" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="commons-beanutils" module="commons-beanutils-core" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="com.google.guava" module="guava" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="org.glassfish.jersey.core" module="jersey-common" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="commons-collections" module="commons-collections" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="io.netty" module="netty-buffer" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="commons-logging" module="commons-logging" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+</dependency>
+    <dependency org="org.mockito" name="mockito-all" rev="1.10.19" conf="test->default(compile)">
+      <exclude org="org.slf4j" module="log4j-over-slf4j" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+</dependency>
+    <dependency org="org.mockito" name="mockito-all" rev="1.10.19" conf="it->default(compile)">
+      <exclude org="org.slf4j" module="log4j-over-slf4j" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+</dependency>
+    <dependency org="org.scalatest" name="scalatest_2.11" rev="2.2.6" conf="test->default(compile)">
+      <exclude org="org.slf4j" module="log4j-over-slf4j" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+</dependency>
+    <dependency org="org.scalatest" name="scalatest_2.11" rev="2.2.6" conf="it->default(compile)">
+      <exclude org="org.slf4j" module="log4j-over-slf4j" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+</dependency>
+    <dependency org="org.scalactic" name="scalactic_2.11" rev="2.2.6" conf="test->default(compile)">
+      <exclude org="org.slf4j" module="log4j-over-slf4j" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+</dependency>
+    <dependency org="org.scalactic" name="scalactic_2.11" rev="2.2.6" conf="it->default(compile)">
+      <exclude org="org.slf4j" module="log4j-over-slf4j" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+</dependency>
+    <dependency org="com.google.guava" name="guava" rev="19.0" conf="provided->default(compile)">
+</dependency>
+    <dependency org="com.datastax.cassandra" name="cassandra-driver-core" rev="3.1.0" conf="provided->default(compile)">
+      <exclude org="io.netty" module="netty-transport" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="io.dropwizard.metrics" module="metrics-core" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="io.netty" module="netty-codec" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="io.netty" module="netty" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="io.netty" module="netty-common" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="io.netty" module="netty-handler" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="com.google.guava" module="guava" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="io.netty" module="netty-buffer" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="org.slf4j" module="slf4j-api" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+</dependency>
+    <dependency org="com.datastax.cassandra" name="cassandra-driver-mapping" rev="3.1.0" conf="provided->default(compile)">
+      <exclude org="io.netty" module="netty-transport" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="io.dropwizard.metrics" module="metrics-core" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="io.netty" module="netty-codec" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="io.netty" module="netty" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="io.netty" module="netty-common" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="io.netty" module="netty-handler" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="com.google.guava" module="guava" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="io.netty" module="netty-buffer" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+      <exclude org="org.slf4j" module="slf4j-api" name="*" type="*" ext="*" conf="" matcher="exact">
+</exclude>
+</dependency>
+    <dependency org="org.scala-lang" name="scala-reflect" rev="2.11.8" conf="compile->default(compile)">
+</dependency>
+    <dependency org="org.scala-lang" name="scala-compiler" rev="2.11.8" conf="test->default(compile)">
+</dependency>
+    <dependency org="org.scala-lang" name="scala-compiler" rev="2.11.8" conf="it->default(compile)">
+</dependency>
+  </dependencies>
+</ivy-module>
